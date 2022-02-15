@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    overflow: hidden;
+}
+
+.actual-gradient {
+    background: linear-gradient(to bottom, #1e528e 0%, #265889 20%, #9da671 100%);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    transition: opacity 2s linear;
+}
+
+
+.actual-gradient::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #20202c 0%, #515175 100%);
+    z-index: -1;
+    transition: opacity 1s linear;
+    opacity: 0;
+}
+
+.bg-gradient.space .actual-gradient::before {
+    opacity: 1;
+}
+
+#canvas-test {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.btn-animation {
+    margin: 15% auto 0;
+    width: 10vw;
+    border-radius: 50px;
+    border : 1px solid black;
+    height: 5vh;
+    transition: width .2s ease-in;
+    display: block;
+}
+.bg-gradient.space .btn-animation{
+    width : 0;
+    font-size: 0;
+    border: 0px;
+}
+
+.planet-svg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: -2;
+    top: 10vh;
+    transition : top 2s linear;
+}
+
+.bg-gradient.space .planet-svg{
+    top: 200vh;
+}
